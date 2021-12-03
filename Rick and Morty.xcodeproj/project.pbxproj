@@ -13,6 +13,8 @@
 		5721411F274718A8005E6C81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5721411D274718A8005E6C81 /* Main.storyboard */; };
 		57214121274718A9005E6C81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57214120274718A9005E6C81 /* Assets.xcassets */; };
 		57214124274718A9005E6C81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57214122274718A9005E6C81 /* LaunchScreen.storyboard */; };
+		5732840F2759820700A38E29 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5732840E2759820700A38E29 /* Repository.swift */; };
+		5732841327598EDA00A38E29 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5732841227598EDA00A38E29 /* Service.swift */; };
 		5772B4A327472D2F00A57EB6 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5772B4A227472D2F00A57EB6 /* Location.swift */; };
 		5772B4A627472D4100A57EB6 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5772B4A527472D4100A57EB6 /* Episode.swift */; };
 		5772B4A927472D5E00A57EB6 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5772B4A827472D5E00A57EB6 /* Favorites.swift */; };
@@ -39,6 +41,8 @@
 		57214120274718A9005E6C81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57214123274718A9005E6C81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57214125274718A9005E6C81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5732840E2759820700A38E29 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		5732841227598EDA00A38E29 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		5772B4A227472D2F00A57EB6 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		5772B4A527472D4100A57EB6 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		5772B4A827472D5E00A57EB6 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 				57214120274718A9005E6C81 /* Assets.xcassets */,
 				57214122274718A9005E6C81 /* LaunchScreen.storyboard */,
 				57214125274718A9005E6C81 /* Info.plist */,
+				5732840E2759820700A38E29 /* Repository.swift */,
+				5732841227598EDA00A38E29 /* Service.swift */,
 			);
 			path = "Rick and Morty";
 			sourceTree = "<group>";
@@ -249,11 +255,13 @@
 				5772B4B727472EE900A57EB6 /* EpisodeViewCell.swift in Sources */,
 				5772B4D5274731DC00A57EB6 /* Character.swift in Sources */,
 				5772B4C627472FE300A57EB6 /* CharactersViewController.swift in Sources */,
+				5732840F2759820700A38E29 /* Repository.swift in Sources */,
 				5772B4D02747305300A57EB6 /* FavoritesViewController.swift in Sources */,
 				5772B4BA27472F0200A57EB6 /* CharacterViewCell.swift in Sources */,
 				5772B4AD27472DE200A57EB6 /* CharacterViewController.swift in Sources */,
 				5772B4A927472D5E00A57EB6 /* Favorites.swift in Sources */,
 				5772B4B027472E7100A57EB6 /* LocationViewController.swift in Sources */,
+				5732841327598EDA00A38E29 /* Service.swift in Sources */,
 				5721411A274718A8005E6C81 /* SceneDelegate.swift in Sources */,
 				5772B4BD27472F1900A57EB6 /* LocationViewCell.swift in Sources */,
 			);
