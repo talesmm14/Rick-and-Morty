@@ -30,9 +30,12 @@
 		5772B4C927472FF600A57EB6 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5772B4C827472FF600A57EB6 /* LocationsViewController.swift */; };
 		5772B4D02747305300A57EB6 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5772B4CF2747305300A57EB6 /* FavoritesViewController.swift */; };
 		5772B4D5274731DC00A57EB6 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5772B4D4274731DC00A57EB6 /* Character.swift */; };
+		80412632695C6684EC85FC14 /* Pods_Rick_and_Morty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97498ED2DFF9754B61BD50C /* Pods_Rick_and_Morty.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		018E32A9D2DC7D15044A0486 /* Pods-Rick and Morty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rick and Morty.release.xcconfig"; path = "Target Support Files/Pods-Rick and Morty/Pods-Rick and Morty.release.xcconfig"; sourceTree = "<group>"; };
+		1DB4F175D581DD33C5F7586B /* Pods-Rick and Morty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rick and Morty.debug.xcconfig"; path = "Target Support Files/Pods-Rick and Morty/Pods-Rick and Morty.debug.xcconfig"; sourceTree = "<group>"; };
 		57214114274718A8005E6C81 /* Rick and Morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick and Morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57214117274718A8005E6C81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57214119274718A8005E6C81 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 		5772B4C827472FF600A57EB6 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		5772B4CF2747305300A57EB6 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		5772B4D4274731DC00A57EB6 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		E97498ED2DFF9754B61BD50C /* Pods_Rick_and_Morty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rick_and_Morty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80412632695C6684EC85FC14 /* Pods_Rick_and_Morty.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +81,8 @@
 			children = (
 				57214116274718A8005E6C81 /* Rick and Morty */,
 				57214115274718A8005E6C81 /* Products */,
+				7B0F94D1FF649C119B4F6217 /* Pods */,
+				C9AFD5E485DF079500D07ABC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,6 +181,24 @@
 			path = Favorite;
 			sourceTree = "<group>";
 		};
+		7B0F94D1FF649C119B4F6217 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1DB4F175D581DD33C5F7586B /* Pods-Rick and Morty.debug.xcconfig */,
+				018E32A9D2DC7D15044A0486 /* Pods-Rick and Morty.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C9AFD5E485DF079500D07ABC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E97498ED2DFF9754B61BD50C /* Pods_Rick_and_Morty.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,9 +206,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57214128274718A9005E6C81 /* Build configuration list for PBXNativeTarget "Rick and Morty" */;
 			buildPhases = (
+				C4CF1FC67F50ABEAE25A9B61 /* [CP] Check Pods Manifest.lock */,
 				57214110274718A8005E6C81 /* Sources */,
 				57214111274718A8005E6C81 /* Frameworks */,
 				57214112274718A8005E6C81 /* Resources */,
+				9E24CD37306BC1E2CFE2F530 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -238,6 +265,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9E24CD37306BC1E2CFE2F530 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rick and Morty/Pods-Rick and Morty-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rick and Morty/Pods-Rick and Morty-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rick and Morty/Pods-Rick and Morty-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4CF1FC67F50ABEAE25A9B61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rick and Morty-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		57214110274718A8005E6C81 /* Sources */ = {
@@ -407,6 +476,7 @@
 		};
 		57214129274718A9005E6C81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DB4F175D581DD33C5F7586B /* Pods-Rick and Morty.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -425,6 +495,7 @@
 		};
 		5721412A274718A9005E6C81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 018E32A9D2DC7D15044A0486 /* Pods-Rick and Morty.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

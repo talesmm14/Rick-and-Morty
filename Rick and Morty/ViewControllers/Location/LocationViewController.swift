@@ -11,6 +11,7 @@ private let reuseIdentifier = "Cell"
 
 class LocationViewController: UICollectionViewController {
 
+    var location:Location?
     override func viewDidLoad() {
         super.viewDidLoad()
 

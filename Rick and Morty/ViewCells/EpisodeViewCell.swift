@@ -8,5 +8,7 @@
 import UIKit
 
 class EpisodeViewCell: UITableViewCell {
+    @IBOutlet weak var nome: UILabel!
     
+    @IBOutlet weak var criado: UILabel!
 }

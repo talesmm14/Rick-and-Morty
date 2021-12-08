@@ -9,34 +9,78 @@ import Foundation
 import Alamofire
 
 class Service {
-    //https://restcountries.eu/rest/v2
-       fileprivate var baseUrl = "https://rickandmortyapi.com/api"
-       typealias methodCallBack = (_ method:String?, _ status: Bool, _ message:String) -> Void
+    //https://rickandmortyapi.com/api
+    fileprivate var baseUrl = ""
+    
+    typealias AllCharacterCallBack = (_ method:AllCharacter?, _ status: Bool, _ message:String) -> Void
+    typealias AllEpisodeCallBack = (_ method:AllEpisodes?, _ status: Bool, _ message:String) -> Void
+    typealias AllLocationCallBack = (_ method:AllLocations?, _ status: Bool, _ message:String) -> Void
+ 
+    
+    var callBackAllCharacter:AllCharacterCallBack?
+    var callBackAllLocation:AllLocationCallBack?
+    var callBackAllEpisode:AllEpisodeCallBack?
        
-       var callBack:methodCallBack?
-       
-       init(baseUrl: String) {
-           self.baseUrl = baseUrl
-       }
-       
-       //MARK:- getAllCountryNameFrom
-       func getAllCountryNameFrom(endPoint:String) {
-           AF.request(self.baseUrl + endPoint, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil).response { (responseData) in
-               guard let data = responseData.data else {
-                   self.callBack?(nil, false, "")
-
-                   return}
-               do {
-               let countries = try JSONDecoder().decode([Country].self, from: data)
-                   self.callBack?(countries, true,"")
-               } catch {
-                   self.callBack?(nil, false, error.localizedDescription)
-               }
-               
-           }
-       }
-       
-       func completionHandler(callBack: @escaping methodCallBack) {
-           self.callBack = callBack
-       }
+    init(baseUrl: String) {
+        self.baseUrl = baseUrl
+    }
+    
+   //MARK:- getAllCharacters
+    func getAllCharacters(endPoint:String) {
+        AF.request(self.baseUrl + endPoint, method: .get, parameters: nil, encoding:     URLEncoding.default, headers: nil, interceptor: nil).response { (responseData) in
+            guard let data = responseData.data else {
+                self.callBackAllCharacter?(nil, false, "")
+                return}
+            do {
+            let characters = try JSONDecoder().decode(AllCharacter.self, from: data)
+                self.callBackAllCharacter?(characters, true,"")
+            } catch {
+                self.callBackAllCharacter?(nil, false, error.localizedDescription)
+            }
+           
+        }
+    }
+    
+    //MARK:- getAllEpisodes
+     func getAllEpisodes(endPoint:String) {
+         AF.request(self.baseUrl + endPoint, method: .get, parameters: nil, encoding:     URLEncoding.default, headers: nil, interceptor: nil).response { (responseData) in
+             guard let data = responseData.data else {
+                 self.callBackAllEpisode?(nil, false, "")
+                 return}
+             do {
+             let episodes = try JSONDecoder().decode(AllEpisodes.self, from: data)
+                 self.callBackAllEpisode?(episodes, true,"")
+             } catch {
+                 self.callBackAllEpisode?(nil, false, error.localizedDescription)
+             }
+            
+         }
+     }
+    
+    //MARK:- getAllLocations
+     func getAllLocations(endPoint:String) {
+         AF.request(self.baseUrl + endPoint, method: .get, parameters: nil, encoding:     URLEncoding.default, headers: nil, interceptor: nil).response { (responseData) in
+             guard let data = responseData.data else {
+                 self.callBackAllLocation?(nil, false, "")
+                 return}
+             do {
+             let locations = try JSONDecoder().decode(AllLocations.self, from: data)
+                 self.callBackAllLocation?(locations, true,"")
+             } catch {
+                 self.callBackAllLocation?(nil, false, error.localizedDescription)
+             }
+            
+         }
+     }
+   
+    func completionCharacterHandler(callBackCharacter: @escaping AllCharacterCallBack) {
+        self.callBackAllCharacter = callBackCharacter
+    }
+    func completionEpisodeHandler(callBackEpisode: @escaping AllEpisodeCallBack) {
+        self.callBackAllEpisode = callBackEpisode
+    }
+    func completionLocationHandler(callBackLocation: @escaping AllLocationCallBack) {
+        self.callBackAllLocation = callBackLocation
+    }
+    
 }

@@ -7,12 +7,16 @@
 
 import Foundation
 
-struct Episode: Codable {
+struct Episode: Decodable {
     var id: Int
     var name: String
     var air_date: String
     var episode: String
-    var characters: [Character]
+    var characters: [String]
     var url: String
     var created: String
+}
+
+struct AllEpisodes: Decodable {
+    var results: [Episode]
 }

@@ -7,17 +7,19 @@
 
 import Foundation
 // https://rickandmortyapi.com/documentation/#rest
-struct Character: Codable {
+struct Character: Decodable {
     var id: Int
     var name: String
     var status: String
     var species: String
     var type: String
     var gender: String
-    var origin: Location
-    var location: Location
     var image: String
-    var episode: [Episode]
     var url: String
     var created: String
 }
+
+struct AllCharacter: Decodable {
+    var results: [Character]
+}
+

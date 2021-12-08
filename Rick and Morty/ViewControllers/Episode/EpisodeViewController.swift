@@ -10,7 +10,8 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class EpisodeViewController: UICollectionViewController {
-
+    
+    var episode:Episode?
     override func viewDidLoad() {
         super.viewDidLoad()
 

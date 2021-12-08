@@ -8,5 +8,7 @@
 import UIKit
 
 class LocationViewCell: UITableViewCell {
+    @IBOutlet weak var nome: UILabel!
     
+    @IBOutlet weak var tipo: UILabel!
 }
