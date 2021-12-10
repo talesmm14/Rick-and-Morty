@@ -229,15 +229,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qjk-WU-oY7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qjk-WU-oY7">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="characterIdCell" id="P4U-cC-Mnu" customClass="CharacterViewCell" customModule="Rick_and_Morty" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="characterIdCell" id="P4U-cC-Mnu" customClass="CharacterViewCell" customModule="Rick_and_Morty" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P4U-cC-Mnu" id="2rW-rN-1Rp" customClass="CharacterViewCell" customModule="Rick_and_Morty" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="793614" translatesAutoresizingMaskIntoConstraints="NO" id="sCj-qr-h8e">
@@ -646,6 +646,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="CoS-mr-ggm"/>
                     <connections>
                         <outlet property="especie" destination="a7i-6J-hCa" id="dFR-Dk-A3Z"/>
                         <outlet property="genero" destination="Q7B-8E-Tpj" id="caq-zS-niV"/>
@@ -658,12 +659,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juq-Pt-mAh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2960.8695652173915" y="-652.17391304347836"/>
+            <point key="canvasLocation" x="2971" y="-668"/>
         </scene>
-        <!--View Controller-->
+        <!--Location View Controller-->
         <scene sceneID="SPh-BN-Dzs">
             <objects>
-                <viewController id="iDl-8A-VU7" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="locationIdController" id="iDl-8A-VU7" customClass="LocationViewController" customModule="Rick_and_Morty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rfp-ou-12g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -936,7 +937,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFn-pS-9t8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3662.3188405797105" y="-649.72826086956525"/>
+            <point key="canvasLocation" x="3748" y="-669"/>
         </scene>
         <!--Characters-->
         <scene sceneID="HDx-Th-Z2q">
@@ -948,7 +949,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="2BT-Rn-L4b" kind="relationship" relationship="rootViewController" id="9i9-iF-cHP"/>
+                        <segue destination="2BT-Rn-L4b" kind="relationship" relationship="rootViewController" id="QdT-gE-djn"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bua-YB-c4V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

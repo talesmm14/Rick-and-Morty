@@ -18,9 +18,8 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell:CharacterViewCell = tableView.dequeueReusableCell(withIdentifier: "characterIdCell") as! CharacterViewCell
-        cell.selectionStyle = .none
+        //cell.selectionStyle = .none
         cell.name.text = characters.results[indexPath.row].name
         
         let url = URL(string: characters.results[indexPath.row].image)
@@ -43,6 +42,9 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tblCharacters.delegate = self
+        self.tblCharacters.dataSource = self
+        
         self.title = "Characters"
         tblCharacters.dataSource = self
         let service = Service(baseUrl: "https://rickandmortyapi.com/api/")
