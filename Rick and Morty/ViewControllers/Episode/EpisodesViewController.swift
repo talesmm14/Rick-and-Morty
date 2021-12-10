@@ -50,7 +50,6 @@ class EpisodesViewController: UIViewController, UITableViewDelegate, UITableView
                         guard let self = self else {return}
                         guard let _response = response else {return}
                         self.episodes = _response
-                        print(_response)
                         self.tblEpisodes.reloadData()
                     }
                 }

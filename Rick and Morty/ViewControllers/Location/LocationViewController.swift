@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LocationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -24,7 +25,13 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let label = UILabel(frame: CGRect(x:0, y:0, width:200, height:50))
-        label.text = location.residents[indexPath.row]
+        AF.request(location.residents[indexPath.row])
+          .validate()
+          .responseDecodable(of:Character.self) { (response) in
+                guard let _response = response.value else { return }
+                print(_response)
+                label.text = _response.name
+            }
         cell.addSubview(label)
         return cell
     }

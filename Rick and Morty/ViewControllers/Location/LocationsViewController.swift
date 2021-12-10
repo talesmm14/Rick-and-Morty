@@ -49,7 +49,6 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
                         guard let self = self else {return}
                         guard let _response = response else {return}
                         self.locations = _response
-                        print(_response)
                         self.tblLocations.reloadData()
                     }
                 }

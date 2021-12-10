@@ -22,14 +22,15 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.selectionStyle = .none
         cell.name.text = characters.results[indexPath.row].name
         
-        let url = URL(string: characters.results[indexPath.row].image)
+    
+    //let url = URL(string: characters.results[indexPath.row].image)
 
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-            DispatchQueue.main.async {
-                cell.img.image = UIImage(data: data!)
-            }
-        }
+    //DispatchQueue.global().async {
+        //let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+        //DispatchQueue.main.async {
+        //    cell.img.image = UIImage(data: data!)
+       // }
+   // }
         return cell
     }
     
@@ -52,7 +53,6 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
                         guard let self = self else {return}
                         guard let _response = response else {return}
                         self.characters = _response
-                        print(_response)
                         self.tblCharacters.reloadData()
                     }
                 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -23,7 +24,23 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let label = UILabel(frame: CGRect(x:0, y:0, width:200, height:50))
-        label.text = episode.characters[indexPath.row]
+        AF.request(episode.characters[indexPath.row])
+          .validate()
+          .responseDecodable(of:Character.self) { (response) in
+                guard let _response = response.value else { return }
+                print(_response)
+                label.text = _response.name
+              //let url = URL(string: characters.results[indexPath.row].image)
+              
+              //DispatchQueue.global().async {
+                  //let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                  //DispatchQueue.main.async {
+                  //    cell.img.image = UIImage(data: data!)
+                 // }
+             // }
+            }
+        
+       
         cell.addSubview(label)
         return cell
     }

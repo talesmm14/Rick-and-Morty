@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Alamofire
 
 class CharacterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -27,7 +27,13 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let label = UILabel(frame: CGRect(x:0, y:0, width:200, height:50))
-        label.text = character.episode[indexPath.row]
+        AF.request(character.episode[indexPath.row])
+          .validate()
+          .responseDecodable(of:Episode.self) { (response) in
+                guard let _response = response.value else { return }
+                print(_response)
+                label.text = _response.name
+            }
         cell.addSubview(label)
         return cell
     }
@@ -51,7 +57,6 @@ class CharacterViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
     }
-    
 
     /*
     // MARK: - Navigation
