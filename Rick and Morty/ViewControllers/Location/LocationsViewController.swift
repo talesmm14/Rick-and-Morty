@@ -26,7 +26,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let locationView:LocationViewController = storyboard?.instantiateViewController(identifier: "characterIdController") as! LocationViewController
+        let locationView:LocationViewController = storyboard?.instantiateViewController(identifier: "locationIdController") as! LocationViewController
         let location = locations.results[indexPath.row]
         
         locationView.location = location
@@ -37,7 +37,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Locations"
         tblLocations.dataSource = self
         let service = Service(baseUrl: "https://rickandmortyapi.com/api/")
         

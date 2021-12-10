@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -187,7 +187,6 @@
 				1DB4F175D581DD33C5F7586B /* Pods-Rick and Morty.debug.xcconfig */,
 				018E32A9D2DC7D15044A0486 /* Pods-Rick and Morty.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

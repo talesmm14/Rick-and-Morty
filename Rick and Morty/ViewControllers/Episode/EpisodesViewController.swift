@@ -38,7 +38,7 @@ class EpisodesViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Episodes"
         tblEpisodes.dataSource = self
         let service = Service(baseUrl: "https://rickandmortyapi.com/api/")
         

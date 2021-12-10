@@ -31,28 +31,22 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
                 cell.img.image = UIImage(data: data!)
             }
         }
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let characterView:CharacterViewController = storyboard?.instantiateViewController(identifier: "characterIdController") as! CharacterViewController
         let character = characters.results[indexPath.row]
-        
         characterView.character = character
-        
         self.navigationController?.pushViewController(characterView, animated: true)
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Characters"
         tblCharacters.dataSource = self
         let service = Service(baseUrl: "https://rickandmortyapi.com/api/")
-        
         service.getAllCharacters(endPoint: "character")
-        
         service.completionCharacterHandler { [weak self] (response, status, message) in
                     if status {
                         guard let self = self else {return}
