@@ -17,6 +17,7 @@ struct Character: Decodable {
     var image: String
     var url: String
     var created: String
+    var episode: [String]
     var location: CharacterLocation
     var origin: CharacterLocation
 }

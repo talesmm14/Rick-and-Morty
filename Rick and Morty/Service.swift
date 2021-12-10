@@ -15,9 +15,11 @@ class Service {
     typealias AllCharacterCallBack = (_ method:AllCharacter?, _ status: Bool, _ message:String) -> Void
     typealias AllEpisodeCallBack = (_ method:AllEpisodes?, _ status: Bool, _ message:String) -> Void
     typealias AllLocationCallBack = (_ method:AllLocations?, _ status: Bool, _ message:String) -> Void
+    typealias CharacterCallBack = (_ method:Character?, _ status: Bool, _ message:String) -> Void
  
     
     var callBackAllCharacter:AllCharacterCallBack?
+    var callBackCharacter:CharacterCallBack?
     var callBackAllLocation:AllLocationCallBack?
     var callBackAllEpisode:AllEpisodeCallBack?
        
@@ -72,14 +74,33 @@ class Service {
             
          }
      }
-   
-    func completionCharacterHandler(callBackCharacter: @escaping AllCharacterCallBack) {
+    
+    //MARK:- getAllLocations
+     func getCharacter(url:String) {
+         AF.request(url, method: .get, parameters: nil, encoding:     URLEncoding.default, headers: nil, interceptor: nil).response { (responseData) in
+             guard let data = responseData.data else {
+                 self.callBackAllLocation?(nil, false, "")
+                 return}
+             do {
+             let character = try JSONDecoder().decode(AllLocations.self, from: data)
+                 self.callBackAllLocation?(character, true,"")
+             } catch {
+                 self.callBackAllLocation?(nil, false, error.localizedDescription)
+             }
+            
+         }
+     }
+    
+    func completionCharacterHandler(callBackCharacter: @escaping CharacterCallBack) {
+        self.callBackCharacter = callBackCharacter
+    }
+    func completionAllCharacterHandler(callBackCharacter: @escaping AllCharacterCallBack) {
         self.callBackAllCharacter = callBackCharacter
     }
-    func completionEpisodeHandler(callBackEpisode: @escaping AllEpisodeCallBack) {
+    func completionAllEpisodeHandler(callBackEpisode: @escaping AllEpisodeCallBack) {
         self.callBackAllEpisode = callBackEpisode
     }
-    func completionLocationHandler(callBackLocation: @escaping AllLocationCallBack) {
+    func completionAllLocationHandler(callBackLocation: @escaping AllLocationCallBack) {
         self.callBackAllLocation = callBackLocation
     }
     

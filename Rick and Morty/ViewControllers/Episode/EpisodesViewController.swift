@@ -27,7 +27,7 @@ class EpisodesViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let episodeView:EpisodeViewController = storyboard?.instantiateViewController(identifier: "characterIdController") as! EpisodeViewController
+        let episodeView:EpisodeViewController = storyboard?.instantiateViewController(identifier: "episodeIdController") as! EpisodeViewController
         let episode = episodes.results[indexPath.row]
         
         episodeView.episode = episode
@@ -38,13 +38,14 @@ class EpisodesViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Episodes"
+        tblEpisodes.delegate = self
         tblEpisodes.dataSource = self
+        self.title = "Episodes"
         let service = Service(baseUrl: "https://rickandmortyapi.com/api/")
         
         service.getAllEpisodes(endPoint: "episode")
         
-        service.completionEpisodeHandler { [weak self] (response, status, message) in
+        service.completionAllEpisodeHandler { [weak self] (response, status, message) in
                     if status {
                         guard let self = self else {return}
                         guard let _response = response else {return}

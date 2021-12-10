@@ -8,7 +8,7 @@
 import UIKit
 
 
-class CharacterViewController: UIViewController {
+class CharacterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tblEpisodes: UITableView!
     var character:Character!
@@ -20,6 +20,17 @@ class CharacterViewController: UIViewController {
     @IBOutlet weak var especie: UILabel!
     @IBOutlet weak var img: UIImageView!
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.character.episode.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        let label = UILabel(frame: CGRect(x:0, y:0, width:200, height:50))
+        label.text = character.episode[indexPath.row]
+        cell.addSubview(label)
+        return cell
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +39,7 @@ class CharacterViewController: UIViewController {
         self.genero.text = character.gender
         self.tipo.text = character.type
         self.especie.text = character.species
+        self.tblEpisodes.dataSource = self
         
         let url = URL(string: character.image)
 

@@ -38,12 +38,13 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Locations"
+        tblLocations.delegate = self
         tblLocations.dataSource = self
         let service = Service(baseUrl: "https://rickandmortyapi.com/api/")
         
         service.getAllLocations(endPoint: "location")
         
-        service.completionLocationHandler { [weak self] (response, status, message) in
+        service.completionAllLocationHandler { [weak self] (response, status, message) in
                     if status {
                         guard let self = self else {return}
                         guard let _response = response else {return}
