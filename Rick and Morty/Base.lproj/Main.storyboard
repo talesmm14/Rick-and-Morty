@@ -1046,7 +1046,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="aRM-SO-YIW"/>
                     <connections>
-                        <outlet property="tblEpisodes" destination="hc8-vq-GyA" id="ifu-hr-ttD"/>
+                        <outlet property="tblEpisodes" destination="hc8-vq-GyA" id="8Je-YK-0Ab"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BxK-aU-dTc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1124,7 +1124,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="OjB-iJ-Ogq"/>
                     <connections>
-                        <outlet property="tblLocations" destination="xFU-Ze-SXh" id="ZeJ-X5-Fp0"/>
+                        <outlet property="tblLocations" destination="xFU-Ze-SXh" id="Otv-as-bLX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KEE-Hh-Xy4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

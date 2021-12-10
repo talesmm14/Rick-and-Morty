@@ -7,11 +7,51 @@
 
 import UIKit
 
-class LocationsViewController: UIViewController {
-
+class LocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var tblLocations: UITableView!
+    
+    var locations = AllLocations(results: [])
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.locations.results.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell:LocationViewCell = tableView.dequeueReusableCell(withIdentifier: "locationIdCell") as! LocationViewCell
+        cell.selectionStyle = .none
+        cell.nome.text = locations.results[indexPath.row].name
+        cell.tipo.text = locations.results[indexPath.row].type
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let locationView:LocationViewController = storyboard?.instantiateViewController(identifier: "characterIdController") as! LocationViewController
+        let location = locations.results[indexPath.row]
+        
+        locationView.location = location
+        
+        self.navigationController?.pushViewController(locationView, animated: true)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tblLocations.dataSource = self
+        let service = Service(baseUrl: "https://rickandmortyapi.com/api/")
+        
+        service.getAllLocations(endPoint: "location")
+        
+        service.completionLocationHandler { [weak self] (response, status, message) in
+                    if status {
+                        guard let self = self else {return}
+                        guard let _response = response else {return}
+                        self.locations = _response
+                        print(_response)
+                        self.tblLocations.reloadData()
+                    }
+                }
         // Do any additional setup after loading the view.
     }
     
